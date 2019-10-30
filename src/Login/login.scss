@@ -1,0 +1,51 @@
+@font-face {
+  font-family: BIT;
+  src: url("./font/8-BIT\ WONDER.TTF");
+}
+.loginContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30em;
+  height: 22em;
+  margin-top: -12em; /*set to a negative number 1/2 of your height*/
+  margin-left: -9em; /*set to a negative number 1/2 of your width*/
+  border: 1px solid #ccc;
+  background-color: #d7d1d1;
+  border-radius: 138px 138px 60px 60px;
+  -moz-border-radius: 138px 138px 60px 60px;
+  -webkit-border-radius: 138px 138px 60px 60px;
+  border: 13px solid #000000;
+  -webkit-box-shadow: -1px 3px 64px 27px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 64px 27px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 64px 27px rgba(0, 0, 0, 0.75);
+}
+.loginBody {
+  font-family: BIT, sans-serif;
+  background-image: url("./images/guard.gif"), url("./images/guard2.gif");
+  text-align: center;
+  height: 100vh;
+}
+.title {
+  margin-top: 70px;
+}
+.inputsContainer {
+  margin-top: 30px;
+}
+
+.loginButton {
+  font-family: BIT, sans-serif;
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 30px;
+}
+input[name="username"] {
+  font-family: BIT, sans-serif;
+  text-align: center;
+  color: #5e5e5e;
+}
+input[name="password"] {
+  font-family: BIT, sans-serif;
+  text-align: center;
+  -webkit-text-security: square;
+}

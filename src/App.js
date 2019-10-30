@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import "./App.css";
+import Login from "./Login";
+import { connect } from "react-redux";
+import Welcome from "./Welcome";
+import { fetchUser } from "./store/actions/userActions";
+function App(props) {
+  if (!Object.keys(props.user).length) props.fetchUser();
+  return <div>{Object.keys(props.user).length ? <Welcome /> : <Login />}</div>;
 }
 
-export default App;
+const mapStateToProps = state => ({
+  user: state.user
+});
+const mapDispatchToProps = dispatch => ({
+  fetchUser: () => dispatch(fetchUser())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
